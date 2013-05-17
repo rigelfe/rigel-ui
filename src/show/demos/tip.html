@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>	
+    <link rel="stylesheet" href="../css/demo.css" />
+    <script type='text/javascript' src="../js/demo.js"></script>
+</head>
+<body>
+	<div class="content-title">普通tip</div>
+	<div ecui="type:tip;id:myTip">
+		this is tip
+		<br />
+		this is tip
+		this is tip
+	</div>
+	<div class="content-title">表头tip</div>
+	<div style="width:758px">
+		<div ecui="type:custom-table;id:customTableDemo;left-lock:2;right-lock:1" style="width:700px;height:200px" ></div>
+	</div>
+
+	<script type="text/javascript">
+		//ecui.get('tableDemo')
+		var  header = [[
+			{
+				'checkbox' : true,
+				'width' : 30,
+				'align': 'center',
+				'rowspan' : '2'
+			},
+			{
+				'name': '公司',
+				'width': 200,
+				'content': 'company',
+				'sortable' : true,
+				'rowspan' : '2',
+				'tip':'tip tip tip tip tip tip tip'
+			},
+			{
+				'name' : '子公司',
+				'width' : 200,
+				'content' : 'child-company',
+				'colspan' : '2'
+ 			},
+			{
+				'name': '规模',
+				'width': 200,
+				'content': 'scale',
+				'rowspan' : '2'
+			},
+			{
+				'name': '位置',
+				'width': 200,
+				'content': 'position',
+				'rowspan' : '2'
+			}
+		],
+		[
+			{							
+				'name' : '子公司1',
+				'width' : 200,
+				'content' : 'child-company1',
+				'sortable' : true
+
+			},
+			{							
+				'name' : '子公司2',
+				'width' : 200,
+				'content' : 'child-company2',
+				'sortable' : true
+			}
+		]];
+		var data = [
+			{'company' : 'baidu', 'scale' : '1', 'position' : '西二旗西二旗西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'},
+			{'company' : 'baidu', 'scale' : '2', 'position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'},
+			{'company' : 'baidu', 'scale' : '2', 'position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'},
+			{'company' : 'baidu', 'scale' : '2', 'position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'},
+			{'company' : 'baidu', 'scale' : '3', 'position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'},
+			{'company' : 'baidu', 'scale' : '4', 'position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'},
+			{'company' : 'baidu', 'scale' : '5', 'position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'},
+			{'company' : 'baidu', 'scale' : '6', 'position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'}
+		];
+		ecui.get('customTableDemo').render(header, data, null, {'leftLocked':2});
+	</script>
+</body>
+</html>

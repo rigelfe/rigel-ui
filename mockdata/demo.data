@@ -1,0 +1,13 @@
+{
+	"status": 0,
+	"statusInfo": "",
+	"data": {
+		"id" : 10201212,
+		"name": "天龙玻璃",
+		"industry": "建材 家装",
+		"status": "正常",
+		"newOld": true,
+		"level":60,
+		"mark":60
+	}
+}

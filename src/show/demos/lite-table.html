@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>	
+    <link rel="stylesheet" href="../css/demo.css" />
+    <script type='text/javascript' src="../js/demo.js"></script>
+</head>
+<body>
+	<div class="content-title">简单表格</div>
+	<div ecui="type:lite-table;id:liteTableDemo" style="width:500px" ></div>
+	<script>
+		ecui.get('liteTableDemo').setFields([{
+			'title': '公司',
+			'width': 200,
+			'field': 'company'
+		},
+		{
+			'title': '规模',
+			'width': 200,
+			'field': 'scale'
+		},
+		{
+			'title': '位置',
+			'width': 200,
+			'field': 'position'
+		});
+		ecui.get('liteTableDemo').setData([
+			{'company' : 'baidu', 'scale' : '1', 'position' : '西二旗'},
+			{'company' : 'baidu', 'scale' : '2', 'position' : '西二旗'},
+			{'company' : 'baidu', 'scale' : '3', 'position' : '西二旗'},
+			{'company' : 'baidu', 'scale' : '4', 'position' : '西二旗'},
+			{'company' : 'baidu', 'scale' : '5', 'position' : '西二旗'},
+			{'company' : 'baidu', 'scale' : '6', 'position' : '西二旗'}
+		]);
+
+	</script>	
+</body>
+</html>

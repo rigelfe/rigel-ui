@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>	
+    <link rel="stylesheet" href="../css/demo.css" />
+    <script type='text/javascript' src="../js/demo.js"></script>
+</head>
+<body>
+	<div class="content-title">消息条</div>
+	<div ecui="type:button;id:btnPlay" class="ui-button-g">播放</div>
+	<div ecui="type:button;id:btnStop">停止</div>
+	<div class="content-hr"></div>
+	<div ecui="type:message-bar;id:messageBar"></div>
+	<script>
+		var msgs = [
+					'超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长超长消息1',
+					'消息2',
+					'消息3',
+					'消息4',
+					'消息5',
+					'消息6',
+					'消息7',
+					'消息8',
+					'消息9',
+					'消息10',
+					'消息11'
+				];
+		baidu.each(msgs, function(item) {
+			ecui.get('messageBar').add(item);
+		});
+
+		ecui.get('btnPlay').onclick = function() {
+			ecui.get('messageBar').play();
+		}
+
+		ecui.get('btnStop').onclick = function() {
+			ecui.get('messageBar').stop();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+	font-size: 12px;
+	font-family: Arial, "宋体", Verdana, Geneva, Helvetica, sans-serif;
+	min-width: 960px;
+	line-height: 1.5;
+	color:#666;
+	padding:10px;
+	margin: 0px;
+	
+}
+.content-title {
+	line-height: 32px;
+	font-weight: bold;
+}
+.content-hr{
+	min-height: 10px;
+}

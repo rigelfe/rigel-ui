@@ -1,0 +1,158 @@
+<project name="ecui" default="alltask">
+
+	<property name="root.dir" value="./" />
+
+	<property name="asset.dir" value="./asset/" />
+
+	<property name="src.dir" value="./ecuisrc/" />
+
+	<property name="buildtools.dir" value="./buildtools/" />
+	
+	<!-- the directory containing the source files -->
+	<property name="ecuiSrc.dir" value="./ecuisrc/ecui/" />
+
+	<property name="ecuiExtSrc.dir" value="./ecuisrc/ecui-ext/" />
+
+	
+	<!-- yui compressor directory -->
+	<property name="yuicompressor.jar" location="./buildtools/yuicompressor-2.4.6/build/yuicompressor-2.4.6.jar" />
+
+	<filelist id="ecuiList" dir="${ecuiSrc.dir}/ecui/">
+		<file name="ecui.js" />
+		<file name="adapter.js" />
+		<file name="core.js" />
+		<file name="control.js" />
+		<file name="input-control.js" />
+		<file name="button.js" />
+		<file name="scrollbar.js" />
+		<file name="panel.js" />
+		<file name="items.js" />
+		<file name="checkbox.js" />
+		<file name="radio.js" />
+		<file name="select.js" />
+		<file name="label.js" />
+		<file name="form.js" />
+		<file name="tree-view.js" />
+		<file name="check-tree.js" />
+		<file name="month-view.js" />
+		<file name="lite-table.js" />
+		<file name="table.js" />
+		<file name="locked-table.js" />
+		<file name="messagebox.js" />
+		<file name="popup-menu.js" />
+	</filelist>
+
+	<filelist id="ecuiExtList" dir="${ecuiExtSrc.dir}/ecui-ext/">
+		<file name="editor.js" />
+		<file name="select.js" />
+		<file name="select-async.js" />
+		<file name="cascade-select.js" />
+		<file name="pager.js" />
+		<file name="custom-pager.js" />
+		<file name="ext-pager.js" />
+		<file name="multi-select.js" />
+		<file name="message-bar.js" />
+		<file name="tip.js" />
+		<file name="input.js" />
+		<file name="month-calender.js" />
+		<file name="calendar.js" />
+		<file name="multi-calendar.js" />
+		<file name="table-editor.js" />
+		<file name="custom-table.js" />
+		<file name="ext-table.js" />
+		<file name="score.js" />
+		<file name="toolbar.js" />
+		<file name="query-tab.js" />
+		<file name="ext-editor.js" />
+		<file name="data-tree.js" />
+		<file name="input-tree.js" />
+	</filelist>
+
+<!-- 	<target name="compile">
+        <javac srcdir="${buildtools.dir}"  includes="buildFile.java" classpath="${buildtools.dir}\ant.jar" destdir="${buildtools.dir}" />
+    </target> -->
+
+<!-- 	<target name="buildFile" depends="compile">
+		<taskdef name="buildFile" classname="buildtools.buildFile" classpath="${buildtools.dir}"/>
+		<buildFile>
+			<filelist refid="ecuiList" />
+		</buildFile>
+	</target> -->
+
+	<target name="ecuiSrc.combine">
+		<concat destfile="${ecuiSrc.dir}/ecui-src.js" outputencoding="UTF-8" encoding="UTF-8" fixlastline="yes" eol="crlf">
+			<filelist refid="ecuiList" />
+		</concat>
+	</target>
+
+	<target name="ecuiExtSrc.combine">
+		<concat destfile="${ecuiExtSrc.dir}/ecui-ext-src.js" outputencoding="UTF-8" encoding="UTF-8" fixlastline="yes" eol="crlf">
+			<filelist refid="ecuiExtList" />
+		</concat>
+	</target>
+
+	<target name="ecuiSrc.compress" depends="ecuiSrc.combine">
+		<apply executable="java" parallel="false">
+			<fileset dir="${ecuiSrc.dir}" includes="ecui-src.js" />
+			<arg line="-jar" />
+			<arg path="${yuicompressor.jar}" />
+			<arg line="--charset utf-8" />
+			<srcfile />
+			<arg line="-o ${ecuiSrc.dir}/ecui-min.js" />
+		</apply>
+	</target>
+	
+	<target name="ecuiExtSrc.compress" depends="ecuiExtSrc.combine">
+		<apply executable="java" parallel="false">
+			<fileset dir="${ecuiExtSrc.dir}" includes="ecui-ext-src.js" />
+			<arg line="-jar" />
+			<arg path="${yuicompressor.jar}" />
+			<arg line="--charset utf-8" />
+			<srcfile />
+			<arg line="-o ${ecuiExtSrc.dir}/ecui-ext-min.js" />
+		</apply>
+	</target>
+
+	<!-- Target alltask -->
+	<target name="alltask" depends="ecuiExtSrc.compress,ecuiSrc.compress">
+		<condition property="DEBUG">
+			<or>
+			<equals arg1="${MODE}" arg2="DEBUG" />
+			<equals arg1="${MODE}" arg2="DBG" />
+			</or>
+		</condition>
+		<condition property="RELEASE">
+			<and>
+				<not><equals arg1="${MODE}" arg2="DEBUG" /></not>
+				<not><equals arg1="${MODE}" arg2="SINGLE" /></not>
+				<not><equals arg1="${MODE}" arg2="SOURCE" /></not>
+				<not><equals arg1="${MODE}" arg2="SRC" /></not>
+				<not><equals arg1="${MODE}" arg2="DBG" /></not>
+				<not><equals arg1="${MODE}" arg2="TEST" /></not>
+				<not><equals arg1="${MODE}" arg2="test" /></not>
+				<not><equals arg1="${MODE}" arg2="t" /></not>
+			</and>
+		</condition>
+		<antcall target="DEBUG" />
+		<antcall target="RELEASE" />
+	</target>
+
+
+	<target name="DEBUG" if="DEBUG">
+		<echo>DEBUG MODE</echo>
+
+		<!-- use uncompressed ecui.js-->
+		<copy tofile="${asset.dir}/ecui.js" file="${ecuiSrc.dir}/ecui-debug.js" overwrite="yes"/> 
+		<!-- use uncompressed ecui-ext.js-->
+		<copy tofile="${asset.dir}/ecui-ext.js" file="${ecuiExtSrc.dir}/ecui-ext-debug.js" overwrite="yes"/> 
+	</target>
+
+	<target name="RELEASE" if="RELEASE">
+		<echo>RELEASE(DEFAULT) MODE</echo>
+
+		<!-- use compressed ecui.js-->
+		<copy tofile="${asset.dir}/ecui.js" file="${ecuiSrc.dir}/ecui-min.js" overwrite="yes"/> 
+		<!-- use compressed ecui-ext.js-->
+		<copy tofile="${asset.dir}/ecui-ext.js" file="${ecuiExtSrc.dir}/ecui-ext-min.js" overwrite="yes"/> 
+	</target>
+</project>

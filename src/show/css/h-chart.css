@@ -1,0 +1,67 @@
+/**
+ * xui-ui.css
+ * Copyright 2012 Baidu Inc. All rights reserved.
+ *
+ * @file:    xui-ui的css
+ * @author:  xxx(xxx@baidu.com)
+ */
+
+/**
+ * h-chart
+ */
+.xui-h-chart {
+    width: 840px;
+    position:relative;
+    background:#FFF;
+    /*zIndex设置特别针对IE8, 不然浮层会被charts遮盖...*/
+    z-index:0;
+} 
+.xui-h-chart-header {
+    width:100%;
+}
+.xui-h-chart-title {
+    font-weight:bold;
+    line-height:22px;
+    float:left;
+}
+.xui-h-chart-legend {
+    padding:0px 70px;
+    font-size: 12px;
+    font-family: '微软雅黑', Arial;
+}
+.xui-h-chart-legend-item {
+    display:inline-block;
+    position:relative;
+    margin:0 5px 5px 0;
+    line-height:22px;
+    padding:0 20px 0 5px;
+    cursor:pointer;
+    color:#FFF;
+    font-weight:bold;
+    *display:inline;
+    *zoom:1;
+}
+.xui-h-chart-legend-item-icon {
+    display:block;
+    height:15px;
+    width:10px;
+    position:absolute;
+    top:4px;
+    right:5px;
+    background:url(img/icon.png) -32px -385px;
+}
+.xui-h-chart-legend-item.hidden .ui-charts-legend-item-icon {
+    background-position:-42px -385px;
+}
+.xui-h-chart-content {
+    height:100%;
+}
+.xui-h-chart-empty {
+    width: 100%;
+    height: 100px;
+    padding-top: 70px;
+    text-align: center;
+    border: 1px solid #DDD;
+    font-size: 12px;
+    color: #999;
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>	
+    <link rel="stylesheet" href="../css/demo.css" />
+    <script type='text/javascript' src="../js/demo.js"></script>
+</head>
+<body>
+	<div class="content-title"></div>
+	<div ecui="type:query-tab;value:2;id:tabDemo">
+		<span ecui="value:1">Tab1</span>
+		<span ecui="value:2">Tab2</span>
+		<span ecui="value:3">Tab3</span>
+	</div>
+	<div id="tabDemoDiv" style="border:solid 1px #ccc;height:200px;width:400px;line-height:200px;text-align:center">
+		
+	</div>
+	<script>
+		ecui.get('tabDemo').onchange = function(value) {
+			baidu.g('tabDemoDiv').innerHTML = 'tab' + value;
+		}
+		ecui.get('tabDemo').onchange(2);
+	</script>
+</body>
+</html>

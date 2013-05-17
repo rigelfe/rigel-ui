@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>	
+    <link rel="stylesheet" href="../css/demo.css" />
+    <script type='text/javascript' src="../js/demo.js"></script>
+</head>
+<body>
+
+	<!-- <div ecui="type:ext-editor;id:myEditor"></div> -->
+	<div style="">
+		<div ecui="type:custom-table;id:customTableDemo;" style="width:1000px;height:600px" ></div>
+	</div>
+
+	<script type="text/javascript">
+		//ecui.get('tableDemo')
+		var  header = [[
+			{
+				'checkbox' : true,
+				'width' : 30,
+				'align': 'center',
+				'rowspan' : '2'
+			},
+			{
+				'name': 'url',
+				'width': 290,
+				'content': 'scale',
+				'rowspan' : 2,
+				'editable' : true,
+				'editType' : 'url',
+				'field' : 'url'
+			},			{
+				'name': '公司',
+				'width': 200,
+				'sortable' : true,
+				'colspan' : 3
+			},
+			{
+				'name' : '子公司',
+				'width' : 200,
+				'content' : 'child-company',
+				'colspan' : 2
+ 			},
+			{
+				'name': '规模',
+				'width': 200,
+				'content': 'scale',
+				'rowspan' : 2
+			},
+			
+			{
+				'name': '位置',
+				'width': 200,
+				'content': 'position',
+				'rowspan' : 2
+			}
+		],
+		[
+			{	
+				'name' : '公司1',
+				'width' : 200,
+				'content' : 'company1',
+				'field' : 'company1',
+				'sortable' : true,
+				'editable' : true,
+				'editType' : 'select',
+				'target' : 'company2',
+				'align' : 'right'
+			},
+			{							
+				'name' : '公司2',
+				'width' : 200,
+				'content' : 'company2',
+				'field' : 'company2',
+				'editable' : true,
+				'editType' : 'select',
+				'target' : 'company3',
+				'sortable' : true
+			},
+			{							
+				'name' : '公司3',
+				'width' : 200,
+				'content' : 'company3',
+				'field' : 'company3',
+				'editable' : true,
+				'editType' : 'select',
+				'sortable' : true
+			},
+			{							
+				'name' : '子公司1',
+				'width' : 200,
+				'content' : 'child-company1',
+				'field' : 'child-company1',
+				'sortable' : true,
+				'editable' : true,
+				'editType' : 'input',
+				'align' : 'right'
+
+			},
+			{							
+				'name' : '子公司2',
+				'width' : 200,
+				'content' : 'child-company2',
+				'field' : 'child-company2',
+				'editable' : true,
+				'editType' : 'select',
+				'sortable' : true
+			}
+		]];
+		var data = [
+			{'company' : 'baidu', 'scale' : '1', 'company1':'abc','company2':'efg', 'url':'http://www.baidu.com','company3':'efg','position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'},
+			{'company' : 'baidu', 'scale' : '2', 'company1':'abc','company2':'efg', 'url':'http://www.baidu.com','company3':'efg','position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'},
+			{'company' : 'baidu', 'scale' : '2', 'company1':'abc','company2':'efg', 'url':'http://www.baidu.com','company3':'efg','position' : '西二旗', 'child-company1' : '百度在线', 'child-company2' : '百度时代'},
+			{'company' : 'baidu', 'scale' : '2', 'company1':'abc','company2':'efg', 'url':'http://www.baidu.com','company3':'efg','position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'},
+			{'company' : 'baidu', 'scale' : '3', 'company1':'abc','company2':'efg', 'url':'http://www.baidu.com','company3':'efg','position' : '西二旗', 'child-company1' : '百度在线', 'child-company2' : '百度时代'},
+			{'company' : 'baidu', 'scale' : '4', 'company1':'abc','company2':'efg', 'url':'http://www.baidu.com','company3':'efg','position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'},
+			{'company' : 'baidu', 'scale' : '5', 'company1':'abc','company2':'efg', 'url':'http://www.baidu.com','company3':'efg','position' : '西二旗', 'child-company1' : '百度在线', 'child-company2' : '百度时代'},
+			{'company' : 'baidu', 'scale' : '6', 'company1':'abc','company2':'efg', 'url':'http://www.baidu.com','company3':'efg','position' : '西二旗', 'child-company1' : '百度时代', 'child-company2' : '百度在线'}
+		];
+		ecui.get('customTableDemo').render(header, data, null);
+		
+
+
+
+
+
+
+		ecui.get('customTableDemo').editors['company1'].onbeforeedit = function(control, rowData) {
+			var attached = [
+					{'text':'北京', 'value':'1'},
+					{'text':'上海', 'value':'2'}
+				];
+
+			control.clear();	
+			baidu.each(attached, function(item) {
+				control.add(item.text, null,  {'value' :item['value']});
+			});
+
+			control.setValue('1');
+		}
+
+		ecui.get('customTableDemo').editors['company2'].onbeforeedit = function(control, rowData) {
+			var attached = [
+				{'text':'海淀', 'value':'1'},
+				{'text':'百度在线2', 'value':'2'}
+			];
+			control.clear();
+			baidu.each(attached, function(item) {
+				control.add(item.text, null, {'value' :item['value']});
+			});
+			control.setSelectedIndex(0);
+			control.setValue('2');
+		}
+
+		ecui.get('customTableDemo').editors['company3'].onbeforeedit = function(control, rowData) {
+			var attached = [
+				{'text':'海淀', 'value':'1'},
+				{'text':'百度在线2', 'value':'2'}
+			];
+			
+			control.clear();	
+			baidu.each(attached, function(item) {
+				control.add(item.text, null, {'value' :item['value']});
+			});
+			control.setValue('1');
+		}
+
+
+		ecui.get('customTableDemo').editors['company1'].onchange = function(control, target, rowData) {
+			var value = control.getValue();
+			var targetData = null;
+			if (value == '1') {
+				targetData = [
+					{'text':'海淀', 'value':'1'},
+					{'text':'朝阳', 'value':'2'}
+				];
+			}
+			else if (value == '2') {
+				targetData = [
+					{'text':'青浦', 'value':'3'},
+					{'text':'陆家嘴', 'value':'4'}
+				];				
+			}
+			target.clear();
+			baidu.each(targetData, function(item){
+				target.add(item.text, null, {'value' :item['value']});
+			});
+			target.setSelectedIndex(0);
+		}
+
+		ecui.get('customTableDemo').editors['company2'].onchange = function(control, target, rowData) {
+			console.log(rowData);
+			var value = control.getValue();
+			var targetData = null;
+
+			if (value == '1') {
+				targetData = [
+					{'text':'西二旗', 'value':'1'},
+					{'text':'西三旗', 'value':'2'}
+				];
+			}
+
+			if (value == '2') {
+				targetData = [
+					{'text':'奥体', 'value':'1'},
+					{'text':'鸟巢', 'value':'2'}
+				];
+			}
+			else if (value == '3') {
+				targetData = [
+					{'text':'青浦1', 'value':'1'},
+					{'text':'青浦2', 'value':'2'}
+				];
+			}
+			else if (value == '4') {
+				targetData = [
+					{'text':'陆家嘴1', 'value':'1'},
+					{'text':'陆家嘴2', 'value':'2'}
+				];				
+			}
+			target.clear();
+			baidu.each(targetData, function(item){
+				target.add(item.text, null, {'value' :item['value']});
+			});
+			target.setSelectedIndex(0);
+		}
+
+
+		ecui.get('customTableDemo').editors['company1'].oneditsubmit = function(event, control, rowData) {
+			event.message = '';
+		}
+
+		ecui.get('customTableDemo').editors['url'].onbeforeedit = function(front, root, path, rowData) {
+			var options = [
+				{
+					'value' : '1',
+					'text' : 'wwww'
+				},
+				{
+					'value' : '2',
+					'text' : '无前缀'
+				}
+			];
+			baidu.each(options, function(item) {
+				front.add(item['text'], null, {'value' : item['value']});
+			});
+			front.setValue('1');
+			root.setValue('www.baidu.com');
+			path.setValue('/zhidao');
+		}
+		ecui.get('customTableDemo').editors['url'].oneditsubmit = function(event, front, root, path,  rowData) {
+
+			var front = front.getValue();
+			var root = root.getValue();
+			var path = path.getValue();
+			console.log(front);
+			console.log(root);
+			console.log(path);
+
+		}		
+		// ecui.get('customTableDemo').onbeforeedit = function(event, value, field, rowData) {
+		// 	console.log(rowData);
+		// 	if (field == 'child-company1') {
+		// 		// event.value = 'ccc';
+		// 	}
+		// 	if (field == 'child-company2') {
+		// 		event.attached = [
+		// 			{'text':'百度时代','value':'1'},
+		// 			{'text':'百度在线','value':'2'}
+		// 		]
+		// 	}
+		// }
+
+		// ecui.get('customTableDemo').oneditsubmit = function(event, value, field) {
+		// 	// event.value = 1223;
+		// 	//event.message = 'aaaaa';
+		// }
+	</script>
+</body>
+</html>

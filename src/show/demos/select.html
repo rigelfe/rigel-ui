@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>	
+    <link rel="stylesheet" href="../css/demo.css" />
+    <script type='text/javascript' src="../js/demo.js"></script>
+</head>
+<body>
+	<div class="content-title">普通下拉框</div>
+	<div ecui="type:select;id:selectDemo;">
+		<div ecui='value:1'>item1</div>
+		<div ecui='value:2'>item2</div>
+		<div ecui='value:3'>item3</div>
+		<div ecui='value:4'>item4</div>
+		<div ecui='value:5'>item5</div>
+		<div ecui='value:6'>item6</div>
+		<div ecui='value:7'>item7</div>
+		<div ecui='value:8'>item8</div>
+		<div ecui='value:9'>item9</div>
+		<div ecui='value:10'>item10</div>
+	</div>
+	<div class="content-title">多选下拉框</div>
+	<div ecui="type:multi-select;id:multiSelectDemo;">
+		<div ecui='value:1'>状态1</div>
+		<div ecui='value:2'>状态2</div>
+		<div ecui='value:3'>状态3</div>
+		<div ecui='value:4'>状态4</div>
+		<div ecui='value:5'>状态5</div>
+	</div>
+	<div class="content-title">下拉树</div>
+<!-- 	<div ecui="type:input-tree;id:inputTreeDemo;">
+		<div ecui='value:1'>状态1</div>
+		<div ecui='value:2'>状态2</div>
+		<div ecui='value:3'>状态3</div>
+		<div ecui='value:4'>状态4</div>
+		<div ecui='value:5'>状态5</div>
+	</div>	 -->
+	<div class="content-title">二级联动下拉</div>
+
+	<div ecui="type:cascade-select;id:cascade1;target:cascade2">
+		<div ecui='value:0'>请选择</div>
+		<div ecui='value:1'>北京</div>
+		<div ecui='value:2'>上海</div>
+		<div ecui='value:3'>广州</div>
+	</div>
+	<div ecui="type:cascade-select;id:cascade2;target:cascade3">
+		<div ecui='value:0'>请选择</div>
+	</div>
+<!-- 	<div ecui="type:cascade-select;id:cascade3;">
+		
+	</div> -->
+	<script>
+		ecui.get('selectDemo').setSelectedIndex(0);
+		ecui.get('multiSelectDemo').selectAll();
+
+		ecui.get('cascade1').setSelectedIndex(0);
+		ecui.get('cascade2').setSelectedIndex(0);
+
+		ecui.get('cascade2').onloaddata = function(func, value) {
+			var options = [];
+			switch(value) {
+				case '0':
+					options = [
+						{
+							'text':'请选择',
+							'value':'-1'
+						}
+					];
+					break;					
+				case '1':
+					options = [
+						{
+							'text':'海淀区',
+							'value':'1'
+						},
+						{
+							'text':'朝阳区',
+							'value':'2'
+						}
+					];
+					break;
+				case '2' :
+					options = [
+						{
+							'text':'青浦区',
+							'value':'1'
+						},
+						{
+							'text':'杨浦区',
+							'value':'2'
+						},						
+						{
+							'text':'徐汇区',
+							'value':'3'
+						}
+					];
+					break;
+				case '3' :
+					options = [
+						{
+							'text':'佛山区',
+							'value':'1'
+						}
+					];			
+					break;
+			};
+			func(options, null);
+		}
+
+		// ecui.get('cascade3').onloaddata = function(func, value) {
+		// 	var options = [];
+		// 	switch(value) {
+		// 		case '1':
+		// 			options = [
+		// 				{
+		// 					'text':'item1',
+		// 					'value':'1'
+		// 				},
+		// 				{
+		// 					'text':'item2',
+		// 					'value':'2'
+		// 				}
+		// 			];
+		// 			break;
+		// 		case '2' :
+		// 			options = [
+		// 				{
+		// 					'text':'item3',
+		// 					'value':'1'
+		// 				},
+		// 				{
+		// 					'text':'item4',
+		// 					'value':'2'
+		// 				},						
+		// 				{
+		// 					'text':'item5',
+		// 					'value':'3'
+		// 				}
+		// 			];
+		// 			break;
+		// 		case '3' :
+		// 			options = [
+		// 				{
+		// 					'text' : 'item6',
+		// 					'value' : '1'
+		// 				}
+		// 			];
+		// 			break;
+		// 	};
+		// 	func(options, '1');
+		// }
+		//ecui.get('cascade1').$change();
+		
+	</script>
+</body>
+</html>

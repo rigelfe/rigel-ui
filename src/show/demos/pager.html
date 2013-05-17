@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>	
+    <link rel="stylesheet" href="../css/demo.css" />
+    <script type='text/javascript' src="../js/demo.js"></script>
+</head>
+<body>
+	<div class="content-title">类型1</div>
+	<div ecui="type:custom-pager;"></div>
+	<div class="content-title">类型2</div>
+	<div ecui="type:ext-pager;id:extPager;pageOptions:10,20,30" style="width:700px"></div>
+	<div class="content-title">类型3</div>
+	<div ecui="type:pager;id:pager;showCount:5;page:1;pageSize:50;total:5000"></div>
+	<script>
+		ecui.get('extPager').render(1, 200, 20);
+	</script>
+</body>
+</html>

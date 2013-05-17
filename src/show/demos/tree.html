@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>	
+    <link rel="stylesheet" href="../css/demo.css" />
+    <script type='text/javascript' src="../js/demo.js"></script>
+</head>
+<body>
+	<div class="content-title">tree-view</div>
+	<div ecui="type:tree-view;">
+		<!-- 显示的文本，如果没有label整个内容就是节点的文本 -->
+		<label>公司</label>
+		<!-- 子控件 -->
+		<div>董事会</div>
+		<div>监事会</div>
+		<div>
+			<label>总经理</label>
+			<div>行政部</div>
+			<div>人事部</div>
+			<div>财务部</div>
+			<div>市场部</div>
+			<div>销售部</div>
+			<div>技术部</div>
+		</div>
+	</div>
+	<div class="content-title">check-tree</div>
+	<div ecui="type:check-tree;fold:true;id:parent;name:part">
+	    <!-- 当前节点的文本，如果没有整个内容就是节点的文本 -->
+	    <label>节点的文本</label>
+	    <!-- 这里放子控件，如果需要fold某个子控件，将子控件的style="display:none"即可 -->
+	    <li>子控件文本</li>
+	    <li>子控件文本(复选框默认与父控件复选框联动)</li>
+	</div>
+	<div class="content-title">input-tree(单选)</div>
+
+	<div ecui="type:input-tree;">
+		<label>公司</label>
+		<!-- 子控件 -->
+		<div>董事会</div>
+		<div>监事会</div>
+		<div>
+			<label>总经理</label>
+			<div>行政部</div>
+			<div>人事部</div>
+			<div>财务部</div>
+			<div>市场部</div>
+			<div>销售部</div>
+			<div>技术部</div>
+		</div>
+	</div>
+
+	<div class="content-title">input-tree(多选)</div>
+
+	<div ecui="type:input-tree;multi:true">
+		<label>公司</label>
+		<!-- 子控件 -->
+		<div>董事会</div>
+		<div>监事会</div>
+		<div>
+			<label>总经理</label>
+			<div>行政部</div>
+			<div>人事部</div>
+			<div>财务部</div>
+			<div>市场部</div>
+			<div>销售部</div>
+			<div>技术部</div>
+		</div>
+	</div>
+
+</body>
+</html>

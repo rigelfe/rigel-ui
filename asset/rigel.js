@@ -4,7 +4,7 @@
  *
  * path:    rigel.js
  * desc:    跨项目的实用工具集
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * depend:  tangram, ecui, e-json
  */
 

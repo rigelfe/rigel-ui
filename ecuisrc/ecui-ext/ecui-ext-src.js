@@ -1788,7 +1788,7 @@ _eInput - 多选项的INPUT对象
  * 
  * path:    message-bar.js
  * desc:    系统消息控件
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * date:    2012/03/20
  */
 (function () {
@@ -2239,7 +2239,7 @@ _eInput - 多选项的INPUT对象
  * 
  * path:    input.js
  * desc:    文本输入框(input与textarea)
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * date:    2012/03/12
  */
 (function () {
@@ -4985,7 +4985,7 @@ _eInput - 多选项的INPUT对象
  * 
  * path:    ext-table.js
  * desc:    增强表格，满足业务要求 
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * date:    2012/03/05
  * attention: 
  * 不支持表格Body中的数据进行单元格合并
@@ -5582,7 +5582,7 @@ _eInput - 多选项的INPUT对象
  * 
  * path:    score.js
  * desc:    评分控件
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * date:    2012/03/22
  *
  * params:
@@ -6084,7 +6084,7 @@ _eInput - 多选项的INPUT对象
  * 
  * path:    query-tab.js
  * desc:    查询类型tab
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * date:    2012/03/12
  */
 (function () {
@@ -6242,7 +6242,7 @@ _eInput - 多选项的INPUT对象
  * path:    data-tree.js
  * desc:    数据树
  *          在普通树控件的基础上进行扩展
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * date:    2012/03/12
  */
 (function () {
@@ -6535,7 +6535,7 @@ _eInput - 多选项的INPUT对象
  * 
  * path:    input-tree.js
  * desc:    树层级输入框
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * date:    2012/03/12
  */
 (function () {

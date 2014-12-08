@@ -4,7 +4,7 @@
  * 
  * path:    ext-table.js
  * desc:    增强表格，满足业务要求 
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * date:    2012/03/05
  * attention: 
  * 不支持表格Body中的数据进行单元格合并

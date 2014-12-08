@@ -4,7 +4,7 @@
  * 
  * @file:    基类.
  *           这些ui是项目中不成体系的ui、简单的ui的集合
- * @author:  sushuang(sushuang@baidu.com)
+ * @author:  sushuang(sushuang0322@gmail.com)
  * @depend:  xutil.object
  * @version: 1.0.1
  */

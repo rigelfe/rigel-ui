@@ -4,7 +4,7 @@
  *
  * @file:   工程直接使用的工具集
  *          在基础提供的工具函数之外，可根据每个工程需要添加工具函数
- * @author:  sushuang(sushuang@baidu.com)
+ * @author:  sushuang(sushuang0322@gmail.com)
  */
 
 /**
@@ -35,7 +35,7 @@ var xutil = {
  * Copyright 2012 Baidu Inc. All rights reserved.
  *
  * @file:    基本工具函数
- * @author:  sushuang(sushuang@baidu.com)
+ * @author:  sushuang(sushuang0322@gmail.com)
  * @depend:  xutil.lang, xutil.string
  */
 
@@ -91,7 +91,7 @@ var xutil = {
  * Copyright 2012 Baidu Inc. All rights reserved.
  *
  * @file:    字符串相关工具函数
- * @author:  sushuang(sushuang@baidu.com)
+ * @author:  sushuang(sushuang0322@gmail.com)
  * @depend:  xutil.lang
  */
 
@@ -143,7 +143,7 @@ var xutil = {
  * Copyright 2012 Baidu Inc. All rights reserved.
  *
  * @file:    DOM相关工具函数
- * @author:  sushuang(sushuang@baidu.com)
+ * @author:  sushuang(sushuang0322@gmail.com)
  */
 
 (function () {
@@ -207,7 +207,7 @@ var xutil = {
  * Copyright 2012 Baidu Inc. All rights reserved.
  *
  * @file:    对象相关工具函数
- * @author:  sushuang(sushuang@baidu.com)
+ * @author:  sushuang(sushuang0322@gmail.com)
  * @depend:  none
  */
 
@@ -301,7 +301,7 @@ var xutil = {
  * Copyright 2012 Baidu Inc. All rights reserved.
  *
  * @file:    数值相关工具函数
- * @author:  sushuang(sushuang@baidu.com)
+ * @author:  sushuang(sushuang0322@gmail.com)
  * @depend:  none
  */
 
@@ -465,7 +465,7 @@ var xutil = {
  * Copyright 2012 Baidu Inc. All rights reserved.
  *
  * @file:    函数相关工具函数
- * @author:  sushuang(sushuang@baidu.com)
+ * @author:  sushuang(sushuang0322@gmail.com)
  * @depend:  xutil.lang
  */
 
@@ -512,7 +512,7 @@ var xutil = {
  *
  * @file:   时间相关工具函数集合。
  *          便于工程中统一时间格式，并提供时间相关的数学操作。
- * @author: sushuang(sushuang@baidu.com)
+ * @author: sushuang(sushuang0322@gmail.com)
  * @depend: xutil.lang, xutil.number
  */
 

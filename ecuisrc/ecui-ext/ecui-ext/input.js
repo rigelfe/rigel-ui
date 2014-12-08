@@ -4,7 +4,7 @@
  * 
  * path:    input.js
  * desc:    文本输入框(input与textarea)
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * date:    2012/03/12
  */
 (function () {

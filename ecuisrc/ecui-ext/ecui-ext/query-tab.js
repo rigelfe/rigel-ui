@@ -4,7 +4,7 @@
  * 
  * path:    query-tab.js
  * desc:    查询类型tab
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * date:    2012/03/12
  */
 (function () {

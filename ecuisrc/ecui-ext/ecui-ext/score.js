@@ -4,7 +4,7 @@
  * 
  * path:    score.js
  * desc:    评分控件
- * author:  cxl(chenxinle@baidu.com)
+ * author:  treelite(c.xinle@gmail.com)
  * date:    2012/03/22
  *
  * params:
